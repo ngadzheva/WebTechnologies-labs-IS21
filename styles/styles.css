@@ -1,0 +1,70 @@
+@import "reset-css.css";
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40vh;
+    margin: 15px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+section {
+    display: grid;
+    margin: 30px;
+    width: 100%;
+}
+
+header {
+    justify-self: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+table {
+    margin-top: 15px;
+}
+
+th, legend {
+    font-weight: bold;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    margin-bottom: 15px;
+}
+
+fieldset {
+    display: flex;
+    justify-self: center;
+    width: 60%;
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+input {
+    display: block;
+    width: 99%;
+}
+
+#submit {
+    width: 40%;
+    margin-top: 20px;
+}
