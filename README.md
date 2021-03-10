@@ -19,3 +19,10 @@
 - [CSS Tutorial](https://www.codecademy.com/learn/learn-css)
 - [CSS Flex Game](http://flexboxfroggy.com/)
 - [CSS Grid Game](https://cssgridgarden.com/)
+
+## Course Project Iterations
+Deadline | Requirements
+--- | --- 
+~31.03.2021 | **Front-end only.** Mockup of the project.
+~05.05.2021 | **Back-end logic.** REST API. Communication between the client and the server.
+~09.06.2021 | **Data Base.** Data models. Communication between the server and the db.
