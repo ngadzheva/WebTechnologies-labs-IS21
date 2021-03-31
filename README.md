@@ -22,6 +22,9 @@
 - [CSS Flex Game](http://flexboxfroggy.com/)
 - [CSS Grid Game](https://cssgridgarden.com/)
 - [Interactive Websites with Javascript Tutorial](https://www.codecademy.com/learn/build-interactive-websites)
+- [Learn JavaScript Tutorial](https://www.codecademy.com/learn/introduction-to-javascript)
+- [You don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md)
+- [Eloquent JavaScript](https://github.com/amilajack/reading/blob/master/JavaScript/Eloquent%20JavaScript.pdf)
 
 ## Course Project
 ### Iterations
