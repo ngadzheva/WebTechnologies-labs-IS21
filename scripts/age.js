@@ -8,4 +8,7 @@ Age.prototype.getAge = function () {
 
 const age = new Age(22);
 
-module.exports = age;
+module.exports = {
+    Age,
+    age
+};
