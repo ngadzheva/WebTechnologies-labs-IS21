@@ -17,14 +17,18 @@
 - [Try Git](https://try.github.io/)
 - [HTML Tutorial](https://www.codecademy.com/learn/learn-html)
 - [CSS Tutorial](https://www.codecademy.com/learn/learn-css)
+- [CSS Diner](https://flukeout.github.io/)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [CSS Flex Game](http://flexboxfroggy.com/)
 - [CSS Grid Game](https://cssgridgarden.com/)
 - [Interactive Websites with Javascript Tutorial](https://www.codecademy.com/learn/build-interactive-websites)
 - [Learn JavaScript Tutorial](https://www.codecademy.com/learn/introduction-to-javascript)
+- [Learn Asynchronous JavaScript](https://www.codecademy.com/learn/asynchronous-javascript)
 - [You don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md)
 - [Eloquent JavaScript](https://github.com/amilajack/reading/blob/master/JavaScript/Eloquent%20JavaScript.pdf)
+- [Angular Docs](https://angular.io/docs)
+- [React Docs](https://reactjs.org/docs/getting-started.html)
 
 ## Course Project
 ### Iterations
