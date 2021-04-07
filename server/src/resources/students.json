@@ -1,0 +1,22 @@
+{
+    "students": [
+        {
+            "firstName": "Ivan",
+            "lastName": "Ivanov",
+            "fn": "77777",
+            "mark": 5
+        },
+        {
+            "firstName": "Petar",
+            "lastName": "Petrov",
+            "fn": "77778",
+            "mark": 6
+        },
+        {
+            "firstName": "Georgi",
+            "lastName": "Georgiev",
+            "fn": "77779",
+            "mark": 6
+        }
+    ]
+}

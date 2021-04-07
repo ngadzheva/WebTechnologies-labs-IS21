@@ -1,0 +1,26 @@
+{
+  "name": "web-tech-demo",
+  "version": "1.0.0",
+  "description": "This is a startup demo project for Web Tech course @FMI",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngadzheva/WebTechnologies-labs-IS21.git"
+  },
+  "author": "Nevena Gadzheva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngadzheva/WebTechnologies-labs-IS21/issues"
+  },
+  "homepage": "https://github.com/ngadzheva/WebTechnologies-labs-IS21#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.37",
+    "express": "^4.17.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}

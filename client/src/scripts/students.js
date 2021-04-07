@@ -37,7 +37,7 @@
 })();
 
 function addStudent(event) {
-    event.preventDefault();
+    // event.preventDefault();
     event.stopPropogation();
 
     const firstName = document.getElementsByName('first-name')[0];
