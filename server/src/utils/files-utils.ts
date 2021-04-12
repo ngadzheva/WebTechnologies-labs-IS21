@@ -1,31 +1,25 @@
 import * as fs from 'fs';
+import * as path from 'path';
+import * as util from 'util';
 
-const read = async (filename) => {
-    let result: string;
+type ReadFileType = (filePath: string, filename: string) => Promise<string>;
+type WriteFileType = (filePath: string, filename: string, data: string) => Promise<void>;
 
-    await fs.readFile(filename, (error: NodeJS.ErrnoException, data: Buffer) => {
-        if (error) {
-            result = 'Error reading file';
-        }
+const readFile = util.promisify(fs.readFile);
+const writeFile = util.promisify(fs.writeFile);
 
-        result = data.toString();
-    });
+const read: ReadFileType = async (filePath: string, filename: string): Promise<string> => {
+    const file: string = path.join(__dirname, filePath) + filename;
 
-    return result;
+    // TODO: Handle errors
+    return await readFile(file, 'utf-8');
 }
 
-const write = async (filename, data) => {
-    let result: string;
+const write: WriteFileType = async (filePath: string, filename: string, data: string): Promise<void> => {
+    const file: string = path.join(__dirname, filePath) + filename;
 
-    await fs.writeFile(filename, data, (error: NodeJS.ErrnoException) => {
-        if (error) {
-            result = 'Error writing file';
-        }
-
-        result = 'Successfully written file';
-    });
-
-    return result;
+    // TODO: Handle errors
+    await writeFile(file, data);
 }
 
 export { read, write };

@@ -3,6 +3,7 @@ import students from './routes/students';
 
 const app = express();
 
+app.use(express.json());
 app.use('/students', students);
 
 app.listen(3001, () => {

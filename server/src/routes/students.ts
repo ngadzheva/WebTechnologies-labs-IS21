@@ -3,10 +3,11 @@ import { read, write } from '../utils/files-utils';
 
 const students: express.Router = express.Router();
 
-const filename = '../resources/students.json';
+const filePath: string = '../resources';
+const filename: string = '/students.json';
 
 students.get('/marks', async (request: express.Request, response: express.Response) => {
-    const studentsMarks: string = await read(filename);
+    const studentsMarks: string = await read(filePath, filename);
 
     response.json(studentsMarks);
 });
@@ -16,21 +17,21 @@ students.post('/marks', async (request: express.Request, response: express.Respo
 
     /*
         {
-            'first-name': 'Name',
-            'last-name': 'Last name',
+            'firstName': 'Name',
+            'lastName': 'Last name',
             'fn': 77777,
             'mark': 6
         }
     */
 
-    let studentsMarks: string = await read(filename);
+    let studentsMarks: string = await read(filePath, filename);
     const students: { [key: string]: Array< { [key: string]: string | number }> } = JSON.parse(studentsMarks);
     
     students.students.push(body);
 
     studentsMarks = JSON.stringify(students);
 
-    await write(filename, studentsMarks);
+    await write(filePath, filename, studentsMarks);
 
     response.json(studentsMarks);
 });
@@ -38,7 +39,7 @@ students.post('/marks', async (request: express.Request, response: express.Respo
 students.delete('/marks/:fn', async (request: express.Request, response: express.Response) => {
     const { fn } = request.params;
 
-    let studentsMarks: string = await read(filename);
+    let studentsMarks: string = await read(filePath, filename);
     const students: { [key: string]: Array< { [key: string]: string | number }> } = JSON.parse(studentsMarks);
 
     // search student by fn
@@ -46,6 +47,17 @@ students.delete('/marks/:fn', async (request: express.Request, response: express
     // update studentsMarks
     // update file
     // send response
+
+    const filteredStudents: Array< { [key: string]: string | number }> = await students.students.filter(student => {
+        student.fn !== fn;
+    });
+
+    students.students = filteredStudents;
+    studentsMarks = JSON.stringify(students);
+
+    await write(filePath, filename, studentsMarks);
+
+    response.json(studentsMarks);
 });
 
 export default students;
