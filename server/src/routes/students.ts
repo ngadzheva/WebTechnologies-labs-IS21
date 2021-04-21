@@ -1,5 +1,6 @@
 import * as express from 'express';
 import { read, write } from '../utils/files-utils';
+import { Student } from '../interfaces/student';
 
 const students: express.Router = express.Router();
 
@@ -9,12 +10,10 @@ const filename: string = '/students.json';
 students.get('/marks', async (request: express.Request, response: express.Response) => {
     const studentsMarks: string = await read(filePath, filename);
 
-    response.json(studentsMarks);
+    response.status(200).json(studentsMarks);
 });
 
 students.post('/marks', async (request: express.Request, response: express.Response) => {
-    const { body } = request;
-
     /*
         {
             'firstName': 'Name',
@@ -23,6 +22,7 @@ students.post('/marks', async (request: express.Request, response: express.Respo
             'mark': 6
         }
     */
+    const { body } = request;
 
     let studentsMarks: string = await read(filePath, filename);
     const students: { [key: string]: Array< { [key: string]: string | number }> } = JSON.parse(studentsMarks);
@@ -33,14 +33,14 @@ students.post('/marks', async (request: express.Request, response: express.Respo
 
     await write(filePath, filename, studentsMarks);
 
-    response.json(studentsMarks);
+    response.status(200).json(body);
 });
 
 students.delete('/marks/:fn', async (request: express.Request, response: express.Response) => {
     const { fn } = request.params;
 
     let studentsMarks: string = await read(filePath, filename);
-    const students: { [key: string]: Array< { [key: string]: string | number }> } = JSON.parse(studentsMarks);
+    const students: { [key: string]: Array<Student> } = JSON.parse(studentsMarks);
 
     // search student by fn
     // delete student
@@ -48,7 +48,7 @@ students.delete('/marks/:fn', async (request: express.Request, response: express
     // update file
     // send response
 
-    const filteredStudents: Array< { [key: string]: string | number }> = await students.students.filter(student => {
+    const filteredStudents: Array<Student> = await students.students.filter(student => {
         student.fn !== fn;
     });
 
@@ -57,7 +57,7 @@ students.delete('/marks/:fn', async (request: express.Request, response: express
 
     await write(filePath, filename, studentsMarks);
 
-    response.json(studentsMarks);
+    response.status(200).json(studentsMarks);
 });
 
 export default students;
