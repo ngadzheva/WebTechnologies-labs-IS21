@@ -7,7 +7,10 @@
         <title>Students Marks</title>
 
         <link rel='stylesheet' href='styles/styles.css' type='text/css' />
-        <script defer src='scripts/students.js'></script>
+        <script defer src='scripts/config.js'></script>
+        <script defer src='scripts/utils/services-utils.js'></script>
+        <script defer src='scripts/utils/students-utils.js'></script>
+        <script defer src='scripts/students-marks.js'></script>
     </head>
 
     <body>
@@ -42,7 +45,7 @@
 
                 <fieldset>
                     <legend>Add Student's Mark</legend>
-                    <form class='student' method="GET">
+                    <form class='student'>
                         <label for='first-name'>First Name</label>    
                         <input type='text' name='first-name'/>
                         <label for='last-name'>Last Name</label>    
