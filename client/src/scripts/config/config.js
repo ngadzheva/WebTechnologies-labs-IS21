@@ -1,9 +1,8 @@
 const serverConfig = {
-    host: '192.168.56.1',
+    protocol: 'http',
+    host: 'localhost',
     port: '3001',
     routes: {
         studentsMarks: 'students/marks'
     }
 };
-
-// module.export = config;

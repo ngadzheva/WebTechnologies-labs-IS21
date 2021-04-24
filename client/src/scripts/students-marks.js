@@ -1,5 +1,3 @@
-// const serverConfig = require('config');
-
 (function() {
     const headers = document.getElementsByTagName('header');
     const firstName = document.getElementById('first-name');
@@ -22,20 +20,19 @@
     const deleteHeader = document.getElementById('delete-header');
     deleteHeader.before(th);
 
-    const td = document.createElement('td');
-    td.innerHTML = '6';
-    td.setAttribute('id', 'mark');
-
-    const deleteBtn = document.getElementById('delete');
-    deleteBtn.before(td);
-
-    deleteBtn.addEventListener('click', deleteStudent);
-
     const addBtn = document.querySelector('[name="add"]');
     addBtn.addEventListener('click', addStudent);
 
-    const url = `${serverConfig.routes.studentsMarks}`;
-    sendRequest(url, {}, showStudents, handleError);
+    const options = {
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    };
+    const url = `${serverConfig.protocol}://${serverConfig.host}:${serverConfig.port}/${serverConfig.routes.studentsMarks}`;
+    sendRequest(url, options, showStudents, handleError);
 })();
 
 function example() {

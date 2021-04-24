@@ -7,8 +7,8 @@
         <title>Students Marks</title>
 
         <link rel='stylesheet' href='styles/styles.css' type='text/css' />
-        <script defer src='scripts/config.js'></script>
-        <script defer src='scripts/utils/services-utils.js'></script>
+        <script defer src='scripts/config/config.js'></script>
+        <script defer src='scripts/services/fetch-service.js'></script>
         <script defer src='scripts/utils/students-utils.js'></script>
         <script defer src='scripts/students-marks.js'></script>
     </head>
@@ -28,14 +28,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class='student'>
-                            <td id='first-name'>Ivan</td>
-                            <td id='last-name'>Ivanov</td>
-                            <td id='fn'>88888</td>
-                            <td id='delete'>
-                                <button>Delete</button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </section>
@@ -46,6 +38,7 @@
                 <fieldset>
                     <legend>Add Student's Mark</legend>
                     <form class='student'>
+                        <label id='error'></label>
                         <label for='first-name'>First Name</label>    
                         <input type='text' name='first-name'/>
                         <label for='last-name'>Last Name</label>    

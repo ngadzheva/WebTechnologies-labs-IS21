@@ -1,19 +1,25 @@
 import * as express from 'express';
+import catchError from '../middleware/error-handler';
 import { read, write } from '../utils/files-utils';
 import { Student } from '../interfaces/student';
+import StudentsMarksController from '../controllers/students-marks-controller';
 
 const students: express.Router = express.Router();
 
 const filePath: string = '../resources';
 const filename: string = '/students.json';
 
-students.get('/marks', async (request: express.Request, response: express.Response) => {
-    const studentsMarks: string = await read(filePath, filename);
+students.get('/marks', catchError(async (request: express.Request, response: express.Response) => {
+    try {
+        const studentsMarks: string = await read(filePath, filename);
+    
+        response.status(200).json(studentsMarks);
+    } catch(error) {
+        response.status(404).json(error);
+    }
+}));
 
-    response.status(200).json(studentsMarks);
-});
-
-students.post('/marks', async (request: express.Request, response: express.Response) => {
+students.post('/marks', catchError(async (request: express.Request, response: express.Response) => {
     /*
         {
             'firstName': 'Name',
@@ -24,19 +30,21 @@ students.post('/marks', async (request: express.Request, response: express.Respo
     */
     const { body } = request;
 
-    let studentsMarks: string = await read(filePath, filename);
-    const students: { [key: string]: Array< { [key: string]: string | number }> } = JSON.parse(studentsMarks);
-    
-    students.students.push(body);
+    let studentsMarks: StudentsMarksController = new StudentsMarksController();
+    let isStudentMarkValid: boolean = studentsMarks.validateStudentMark(body);
 
-    studentsMarks = JSON.stringify(students);
+    if (isStudentMarkValid) {
+        studentsMarks.addStudentMark(body);
 
-    await write(filePath, filename, studentsMarks);
+        await write(filePath, filename, studentsMarks.getStudentsMarks());
 
-    response.status(200).json(body);
-});
+        response.status(200).json(body);
+    } else {
+        response.status(400).json({error: "Student's info is not valid."});
+    }
+}));
 
-students.delete('/marks/:fn', async (request: express.Request, response: express.Response) => {
+students.delete('/marks/:fn', catchError(async (request: express.Request, response: express.Response) => {
     const { fn } = request.params;
 
     let studentsMarks: string = await read(filePath, filename);
@@ -58,6 +66,6 @@ students.delete('/marks/:fn', async (request: express.Request, response: express
     await write(filePath, filename, studentsMarks);
 
     response.status(200).json(studentsMarks);
-});
+}));
 
 export default students;
