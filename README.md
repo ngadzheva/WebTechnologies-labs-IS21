@@ -11,6 +11,13 @@
   - Install NodeJs on Linux/Ubuntu: https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/
   - Install NodeJs on Windows: https://nodejs.org/en/
 **_Note:_** NPM comes with NodeJs
+- How to setup Express
+  - ExpressJs documentation: https://expressjs.com/en/starter/installing.html
+ - How to setup Typescript
+   - Typescript documentation: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+ - How to setup Webpack
+   - Webpack documentation: https://webpack.js.org/concepts/  
+ - Postman: https://www.postman.com/downloads/
 
 ## Resources
 - [Git Tutorials](https://www.atlassian.com/git/tutorials)
@@ -29,6 +36,12 @@
 - [Eloquent JavaScript](https://github.com/amilajack/reading/blob/master/JavaScript/Eloquent%20JavaScript.pdf)
 - [Angular Docs](https://angular.io/docs)
 - [React Docs](https://reactjs.org/docs/getting-started.html)
+- [Typescript Tutorial](https://www.codecademy.com/learn/learn-typescript)
+- [Create a back-end app with JavaScript Tutorial](https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript)
+- [Learn NodeJs Tutorial](https://www.codecademy.com/learn/learn-node-js)
+- [Learn Express Tutorial](https://www.codecademy.com/learn/learn-express)
+- [NodeJs Documentation](https://nodejs.org/en/docs/)
+- [Express Guide](https://expressjs.com/en/guide/routing.html)
 
 ## Course Project
 ### Iterations
