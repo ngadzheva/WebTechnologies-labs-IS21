@@ -11,14 +11,12 @@ const writeFile = util.promisify(fs.writeFile);
 const read: ReadFileType = async (filePath: string, filename: string): Promise<string> => {
     const file: string = path.join(__dirname, filePath) + filename;
 
-    // TODO: Handle errors
     return await readFile(file, 'utf-8');
 }
 
 const write: WriteFileType = async (filePath: string, filename: string, data: string): Promise<void> => {
     const file: string = path.join(__dirname, filePath) + filename;
 
-    // TODO: Handle errors
     await writeFile(file, data);
 }
 

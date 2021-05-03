@@ -1,15 +1,14 @@
 import { Request, Response } from 'express';
 
-const catchError = (middlewareFn: (requset: Request, response: Response, next?: () => void) => void) => {
-    const handleError = async (request: Request, response: Response, next?: () => void) => {
-        try {
-            middlewareFn(request, response, next);
-        } catch(error: any) {
-            response.status(404).json(error);
-        }
+const errorCatch = (middlewareFn: (req: Request, res: Response, next?) => void) => {
+  const handleError = async (req: Request, res: Response, next) => {
+    try {
+      await middlewareFn(req, res, next);
+    } catch (error) {
+      res.status(400).json(error);
     }
+  };
+  return handleError;
+};
 
-    return handleError;
-}
-
-export default catchError;
+export default errorCatch;
