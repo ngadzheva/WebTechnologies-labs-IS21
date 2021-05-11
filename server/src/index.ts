@@ -5,6 +5,7 @@ import * as uuid from 'uuid';
 import * as session from 'express-session';
 import * as memcached from 'connect-memcached';
 import * as cookieParser from 'cookie-parser';
+import { MongoClient } from 'mongodb';
 
 import routes from './routes/index';
 
@@ -59,6 +60,15 @@ app.use(session({
 
 app.use(routes);
 
-app.listen(SERVER_PORT, () => {
-    console.log(`Server is listening on port ${SERVER_PORT}`);
+MongoClient.connect(process.env.LOCAL_DB_URL, (error, client) => {
+    if (error) {
+        client.close();
+        return;
+    }
+
+    console.log(`DB is listening on ${process.env.LOCAL_DB_URL}`);
+
+    app.listen(SERVER_PORT, () => {
+        console.log(`Server is listening on port ${SERVER_PORT}`);
+    });
 });
