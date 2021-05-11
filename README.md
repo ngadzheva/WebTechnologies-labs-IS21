@@ -18,6 +18,9 @@
  - How to setup Webpack
    - Webpack documentation: https://webpack.js.org/concepts/  
  - Postman: https://www.postman.com/downloads/
+ - How to setup MongoDB
+   - Local setup: https://docs.mongodb.com/guides/server/install/
+   - Cloud setup: https://docs.atlas.mongodb.com/
 
 ## Resources
 - [Git Tutorials](https://www.atlassian.com/git/tutorials)
@@ -42,6 +45,7 @@
 - [Learn Express Tutorial](https://www.codecademy.com/learn/learn-express)
 - [NodeJs Documentation](https://nodejs.org/en/docs/)
 - [Express Guide](https://expressjs.com/en/guide/routing.html)
+- [MongoDB Documentation](https://docs.mongodb.com/guides/)
 
 ## Course Project
 ### Iterations
