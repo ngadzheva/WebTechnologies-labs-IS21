@@ -28,7 +28,8 @@
         mode: 'cors',
         credentials: 'same-origin',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         }
     };
     const url = `${serverConfig.protocol}://${serverConfig.host}:${serverConfig.port}/${serverConfig.routes.studentsMarks}`;

@@ -1,7 +1,13 @@
 const sendRequest = (url, options, successCallback, errorCallback) => {
     fetch(url, options)
-        .then(response => response.json())
-        .then(data => successCallback(data))
+        .then(response => {
+            console.log("Response: ", response)
+            response.json()
+        })
+        .then(data => {
+            console.log("Data: ", data)
+            // successCallback(data)
+        })
         .catch(error => errorCallback(error));
 };
 
