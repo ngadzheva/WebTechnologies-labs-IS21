@@ -21,6 +21,7 @@
  - How to setup MongoDB
    - Local setup: https://docs.mongodb.com/guides/server/install/
    - Cloud setup: https://docs.atlas.mongodb.com/
+ - How to setup Mongoose: https://mongoosejs.com/docs/index.html
 
 ## Resources
 - [Git Tutorials](https://www.atlassian.com/git/tutorials)
@@ -46,6 +47,7 @@
 - [NodeJs Documentation](https://nodejs.org/en/docs/)
 - [Express Guide](https://expressjs.com/en/guide/routing.html)
 - [MongoDB Documentation](https://docs.mongodb.com/guides/)
+- [Mongoose Documentation](https://mongoosejs.com/docs/guides.html)
 
 ## Course Project
 ### Iterations
