@@ -1,11 +1,13 @@
 import * as express from 'express';
 
 import login from './login';
+import register from './register';
 import students from './students';
 
 const routes = express.Router();
 
 routes.use('/login', login);
+routes.use('/register', register);
 routes.use('/students', students);
 
 routes.get('/', (request: express.Request, response: express.Response) => {
