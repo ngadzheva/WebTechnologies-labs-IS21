@@ -26,6 +26,7 @@
     const options = {
         method: 'GET',
         mode: 'cors',
+        withCredentials: true,
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',

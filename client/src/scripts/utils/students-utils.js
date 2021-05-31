@@ -82,5 +82,9 @@ const deleteStudent = (event) => {
 };
 
 const showStudents = (data) => {
-    JSON.parse(data).students.forEach(student => createNewStudent(student));
+    if (data.success) {
+        JSON.parse(data).students.forEach(student => createNewStudent(student));
+    } else {
+        window.location = 'login.html';
+    }
 };

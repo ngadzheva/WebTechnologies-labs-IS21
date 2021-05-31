@@ -1,16 +1,11 @@
 const sendRequest = (url, options, successCallback, errorCallback) => {
     fetch(url, options)
-        .then(response => {
-            console.log("Response: ", response)
-            response.json()
-        })
-        .then(data => {
-            console.log("Data: ", data)
-            // successCallback(data)
-        })
+        .then(response => response.json())
+        .then(response => successCallback(response))
         .catch(error => errorCallback(error));
 };
 
 const handleError = (error) => {
-    console.error(error);
+    const errors = document.getElementById('errors');
+    errors.innerHTML = error.error.toString();
 }

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ngadzheva/WebTechnologies-labs-IS21#readme",
   "dependencies": {
+    "@angular/cli": "^12.0.2",
     "yarn": "^1.22.10"
   }
 }

@@ -1,12 +1,12 @@
 const login = event => {
     event.preventDefault();
 
-    const userName = document.getElementById('username').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const rememberMe = document.getElementById('remember-me').value;
 
     const user = {
-        userName,
+        username,
         password,
         rememberMe
     };
@@ -14,6 +14,7 @@ const login = event => {
     const options = {
         method: 'POST',
         mode: 'cors',
+        withCredentials: true,
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json'

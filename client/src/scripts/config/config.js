@@ -4,6 +4,7 @@ const serverConfig = {
     port: '3001',
     routes: {
         studentsMarks: 'students/marks',
-        login: 'login'
+        login: 'login',
+        register: 'register'
     }
 };
