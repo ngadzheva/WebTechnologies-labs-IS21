@@ -22,6 +22,7 @@
    - Local setup: https://docs.mongodb.com/guides/server/install/
    - Cloud setup: https://docs.atlas.mongodb.com/
  - How to setup Mongoose: https://mongoosejs.com/docs/index.html
+ - How to setup Angular: https://angular.io/guide/setup-local
 
 ## Resources
 - [Git Tutorials](https://www.atlassian.com/git/tutorials)
@@ -48,6 +49,7 @@
 - [Express Guide](https://expressjs.com/en/guide/routing.html)
 - [MongoDB Documentation](https://docs.mongodb.com/guides/)
 - [Mongoose Documentation](https://mongoosejs.com/docs/guides.html)
+- [Angular Documentation](https://angular.io/docs)
 
 ## Course Project
 ### Iterations
