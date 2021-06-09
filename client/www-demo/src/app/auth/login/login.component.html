@@ -1,0 +1,23 @@
+<form name="login" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" class="form-horizontal" role="form" novalidate>
+    <div *ngIf="errorMessage" id="error">{{errorMessage}}</div>
+    <div class="form-group">
+      <label for="userName">Потребителско име</label>
+      <input type="text" class="form-control" name="userName" [(ngModel)]="user.userName" #userName="ngModel" placeholder="Въведи потребителско име" required/>
+      <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="invalid-feedback">
+        <div *ngIf="userName.errors && userName.errors.required">Въведете потребителско име.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Парола</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #password="ngModel" required minlength="3" placeholder="Въведи парола" required/>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
+        <div *ngIf="password.errors && password.errors.required">Въведете парола</div>
+        <div *ngIf="password.errors && password.errors.minlength">Паролата трябва да е поне 6 символа</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn">Вход</button>
+    </div>
+
+    <a routerLink="/auth/register">Регистрация</a>
+</form>
